@@ -3,11 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Codes Against Humanity</title>
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font: 20px Helvetica, Arial; color: white; background-color: black; text-align: center; }
+  .questionSpace { padding: 10% }
+  form { background: #bb0000; padding: 20px; position: fixed; bottom: 0; width: 100%; }
+  form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+  form button { width: 9%; background: rgb(228, 98, 3); border: none; padding: 10px; color: white; }
+  #guesses { list-style-type: none; margin: 0; padding: 0; }
+  #guesses li { padding: 5px 10px; }
+  #guesses:nth-child(odd) { background: #757575; }
+  #guesses:nth-child(even) { background: #3d3d3d; }
+  </style>
 </head>
 <body data-ng-controller="CAHctrl as vm">
+  <h2 class=questionSpace>
+    {{vm.currentQuestion}}
+  </h2>
 
-  {{vm.TALKTOME}}
+  <ul id="guesses" data-ng-repeat="guess in vm.guesses track by $index">
+    <!-- prevent errors caused by duplicate guesses by tracking each msg via unique index -->
+    <li>{{guess}}</li>
+  </ul>
+  <form data-ng-submit="vm.sendGuess()">
+    <input data-ng-model="vm.newGuess" autocomplete="off" />
+    <button>Send</button>
+  </form>
 
+
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-resource.min.js"></script>
   <script src="app.js"></script>

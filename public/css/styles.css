@@ -1,0 +1,49 @@
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: 20px Helvetica, Arial;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+.questionSpace {
+  padding: 10%
+}
+form {
+  background: #bb0000;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+form input {
+  border: 0;
+  padding: 10px;
+  width: 40%;
+  margin-right: .5%;
+}
+form button {
+  width: 9%;
+  background: rgb(228, 98, 3);
+  border: none;
+  padding: 10px;
+  color: white;
+}
+#guesses {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#guesses li {
+  padding: 5px 10px;
+}
+#guesses:nth-child(odd) {
+  background: #757575;
+}
+#guesses:nth-child(even) {
+  background: #3d3d3d;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "codes_against_humanity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aubreynortham/Codes-Against-Humanity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aubreynortham/Codes-Against-Humanity/issues"
+  },
+  "homepage": "https://github.com/aubreynortham/Codes-Against-Humanity#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

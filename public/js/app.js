@@ -25,8 +25,19 @@
     vm.newGuess = '';
     vm.sendGuess = function(){
       // console.log($scope.vm.newGuess);
-      vm.guesses.push($scope.vm.newGuess);
+      socket.emit('chat message', vm.newGuess)
+      console.log(vm.newGuess);
+      vm.newGuess = '';
+      // console.log(vm.newGuess);
+      // vm.guesses.push($scope.vm.newGuess);
     }
+    socket.on('chat message', function(msg){
+      // console.log("working?");
+      $scope.$apply(function(){
+        console.log($scope);
+        vm.guesses.push(msg)
+      })
+    });
   }
 
 }());
